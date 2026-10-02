@@ -1,0 +1,19 @@
+{
+  "name": "video-shotcraft",
+  "version": "1.0.0",
+  "description": "Provider-agnostic Remotion video plugin for AI agents: motion-design law, 157 shot recipe cards, official Remotion guidance, and a live app demo lane - all rendered from code, no paid APIs.",
+  "author": {
+    "name": "aegntic"
+  },
+  "repository": "https://github.com/aegntic/video-shotcraft-plugin",
+  "license": "MIT",
+  "keywords": [
+    "video",
+    "remotion",
+    "motion-design",
+    "agent-skills",
+    "product-video",
+    "provider-agnostic"
+  ],
+  "skills": "./skills"
+}

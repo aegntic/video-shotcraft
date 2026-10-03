@@ -55,8 +55,13 @@ clone() {
   local url="$1" dir="$2"
   if [ -d "$UPSTREAM/$dir/.git" ]; then
     echo "upstream ok: $dir (re-run with AEGNTIC_REFRESH=1 to update)"
+  elif git clone --depth 1 "$url" "$UPSTREAM/$dir"; then
+    :
   else
-    git clone --depth 1 "$url" "$UPSTREAM/$dir"
+    # Non-fatal: a dead or unreachable upstream must not abort the skill
+    # linking that already happened above.
+    echo "WARNING: could not clone $url - install.sh continued without it" >&2
+    echo "  (skills are linked; only the _upstream/$dir library is missing)" >&2
   fi
 }
 if [ "${AEGNTIC_REFRESH:-0}" = "1" ]; then
